@@ -8,12 +8,12 @@
 	use PHPMailer\PHPMailer\SMTP;
 
 
-    $ftp_server = "heradata";
+    $ftp_server = "";
       $conn_id = ftp_connect($ftp_server);
-      $ftp_user_name = "appltest";
-      $ftp_user_pass = "appltest";
+      $ftp_user_name = "";
+      $ftp_user_pass = "";
       $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
-      $contents = ftp_nlist($conn_id, '/sqlcom/TEST/EjemploFTP');
+      $contents = ftp_nlist($conn_id, '');
 
 	  $fecha_actual = strtotime(date("d-m-Y H:i:00",time()));
 	 $fecha_actualTamp = strtotime(date("d-m-Y"));
@@ -27,10 +27,10 @@
 		$oMail->Port=587;
 		$oMail->SMTPSecure="tls";
 		$oMail->SMTPAuth=true;
-		$oMail->Username= "kevsphil@gmail.com";
-		$oMail->Password ="Herbyson26";
-		$oMail->setFrom("kevsphil@gmail.com","Lollllllll");
-		$oMail->addAddress("kevsphil@gmail.com","viste");
+		$oMail->Username= "";
+		$oMail->Password ="";
+		$oMail->setFrom("","Lollllllll");
+		$oMail->addAddress("","viste");
 		$oMail->Subject=$objeto;
 		$oMail->msgHTML($mensaje);
 	
